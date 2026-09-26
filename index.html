@@ -1,0 +1,1342 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nha Khoa Quinn | Chăm sóc nụ cười</title>
+
+  <meta
+    name="description"
+    content="Nha Khoa Quinn - Chăm sóc răng miệng hiện đại, tận tâm và chuyên nghiệp."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #087f8c;
+      --primary-dark: #05636d;
+      --light: #eefbfd;
+      --white: #ffffff;
+      --text: #17343a;
+      --muted: #6c858a;
+      --border: #dcecef;
+      --shadow: 0 15px 40px rgba(18, 82, 91, 0.10);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: #fbfeff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--primary);
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #48636a;
+    }
+
+    .nav-links a {
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+      border-radius: 12px;
+      color: white !important;
+      background: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at 85% 20%, #dff9fc 0, transparent 32%),
+        linear-gradient(135deg, #f7feff, #ffffff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--light);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 21px;
+      border-radius: 13px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+    }
+
+    .hero-card {
+      min-height: 420px;
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(8,127,140,.95), rgba(5,99,109,.92));
+      box-shadow: var(--shadow);
+      padding: 35px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-card::before {
+      content: "🦷";
+      position: absolute;
+      font-size: 210px;
+      right: 20px;
+      top: 55px;
+      opacity: .16;
+    }
+
+    .hero-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card h3 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      color: rgba(255,255,255,.82);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      padding: 25px 0;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--primary);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      line-height: 1.12;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      background: #f7fcfd;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      transition: 0.25s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--light);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-box {
+      min-height: 390px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #e6fafd, #f9ffff);
+      display: grid;
+      place-items: center;
+      font-size: 150px;
+      border: 1px solid var(--border);
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      flex: 0 0 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--light);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* ================= PRICING ================= */
+
+    .pricing {
+      background: #f7fcfd;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--primary);
+      transform: translateY(-8px);
+    }
+
+    .price-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 15px 0 20px;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .price-card ul {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= TEAM ================= */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .doctor {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      background: white;
+      text-align: center;
+    }
+
+    .doctor-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--light);
+      font-size: 50px;
+    }
+
+    .doctor p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= BOOKING ================= */
+
+    .booking {
+      background: var(--primary);
+      color: white;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .booking-text p {
+      color: rgba(255,255,255,.8);
+      margin-top: 15px;
+    }
+
+    .booking-form {
+      background: white;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 22px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 12px 13px;
+      outline: none;
+      background: white;
+    }
+
+    .field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: white;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #10383e;
+      color: white;
+      padding: 50px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,.68);
+      font-size: 14px;
+    }
+
+    footer h4 {
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      text-align: center;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+    }
+
+    /* ================= TOAST ================= */
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #123f45;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: .25s;
+      z-index: 2000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 70px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .price-grid,
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+
+      .service-grid,
+      .price-grid,
+      .team-grid,
+      .contact-grid,
+      .footer-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+        <span class="logo-icon">🦷</span>
+        Nha Khoa Quinn
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Mở menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Trang chủ</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#about">Về Quinn</a>
+        <a href="#pricing">Bảng giá</a>
+        <a href="#team">Bác sĩ</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="#booking" class="nav-btn">Đặt lịch</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="badge">✨ Chăm sóc nụ cười hiện đại</span>
+
+          <h1>
+            Nụ cười khỏe,<br>
+            <span>tự tin hơn.</span>
+          </h1>
+
+          <p>
+            Nha Khoa Quinn mang đến trải nghiệm chăm sóc răng miệng
+            hiện đại, nhẹ nhàng và tận tâm cho mọi khách hàng.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary">
+              📅 Đặt lịch ngay
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Xem dịch vụ →
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-content">
+            <h3>Chăm sóc bằng sự tận tâm</h3>
+            <p>
+              Công nghệ hiện đại · Không gian thoải mái ·
+              Đội ngũ chuyên nghiệp
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <strong>10+</strong>
+          <span>Năm kinh nghiệm</span>
+        </div>
+
+        <div class="stat">
+          <strong>15K+</strong>
+          <span>Khách hàng</span>
+        </div>
+
+        <div class="stat">
+          <strong>20+</strong>
+          <span>Chuyên gia</span>
+        </div>
+
+        <div class="stat">
+          <strong>98%</strong>
+          <span>Khách hàng hài lòng</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="section-head center">
+          <div class="eyebrow">Dịch vụ</div>
+
+          <h2>
+            Chăm sóc răng miệng<br>
+            toàn diện
+          </h2>
+
+          <p>
+            Các giải pháp nha khoa được thiết kế phù hợp
+            với nhu cầu của từng khách hàng.
+          </p>
+        </div>
+
+
+        <div class="service-grid">
+
+          <article class="service">
+            <div class="service-icon">🦷</div>
+            <h3>Nha khoa tổng quát</h3>
+            <p>
+              Khám, vệ sinh răng miệng và điều trị các vấn đề
+              răng miệng thường gặp.
+            </p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">✨</div>
+            <h3>Tẩy trắng răng</h3>
+            <p>
+              Giải pháp làm sáng nụ cười với quy trình
+              được kiểm soát bởi bác sĩ.
+            </p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">😁</div>
+            <h3>Niềng răng</h3>
+            <p>
+              Tư vấn và xây dựng kế hoạch chỉnh nha
+              phù hợp với từng trường hợp.
+            </p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">🛡️</div>
+            <h3>Implant</h3>
+            <p>
+              Giải pháp phục hồi răng mất với kế hoạch
+              điều trị cá nhân hóa.
+            </p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">💎</div>
+            <h3>Răng sứ thẩm mỹ</h3>
+            <p>
+              Cải thiện hình dáng và màu sắc răng
+              theo nhu cầu thẩm mỹ.
+            </p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">👶</div>
+            <h3>Nha khoa trẻ em</h3>
+            <p>
+              Chăm sóc răng miệng nhẹ nhàng, thân thiện
+              dành cho trẻ nhỏ.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-box">
+          🦷
+        </div>
+
+        <div>
+
+          <div class="section-head">
+            <div class="eyebrow">Về Quinn</div>
+
+            <h2>
+              Một phòng khám,
+              một mục tiêu:
+              nụ cười khỏe.
+            </h2>
+
+            <p>
+              Quinn hướng đến việc tạo ra trải nghiệm nha khoa
+              dễ chịu, minh bạch và lấy khách hàng làm trung tâm.
+            </p>
+          </div>
+
+          <ul class="check-list">
+
+            <li>
+              <span class="check">✓</span>
+              <span>Đội ngũ bác sĩ được đào tạo chuyên môn.</span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>Trang thiết bị và quy trình hiện đại.</span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>Tư vấn rõ ràng trước khi điều trị.</span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>Không gian sạch sẽ và thân thiện.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PRICING ================= -->
+
+    <section class="pricing" id="pricing">
+
+      <div class="container">
+
+        <div class="section-head center">
+          <div class="eyebrow">Tham khảo</div>
+
+          <h2>Bảng giá dịch vụ</h2>
+
+          <p>
+            Chi phí thực tế có thể thay đổi tùy tình trạng
+            và kế hoạch điều trị của từng khách hàng.
+          </p>
+        </div>
+
+
+        <div class="price-grid">
+
+          <div class="price-card">
+
+            <h3>Khám & vệ sinh</h3>
+
+            <div class="price">
+              200K
+              <small>/lần</small>
+            </div>
+
+            <ul>
+              <li>✓ Khám tổng quát</li>
+              <li>✓ Tư vấn chăm sóc</li>
+              <li>✓ Vệ sinh răng miệng</li>
+            </ul>
+
+          </div>
+
+
+          <div class="price-card featured">
+
+            <h3>Tẩy trắng</h3>
+
+            <div class="price">
+              1.5M
+              <small>/gói</small>
+            </div>
+
+            <ul>
+              <li>✓ Tư vấn trước điều trị</li>
+              <li>✓ Quy trình tẩy trắng</li>
+              <li>✓ Hướng dẫn chăm sóc</li>
+            </ul>
+
+          </div>
+
+
+          <div class="price-card">
+
+            <h3>Niềng răng</h3>
+
+            <div class="price">
+              Liên hệ
+            </div>
+
+            <ul>
+              <li>✓ Khám & tư vấn</li>
+              <li>✓ Lập kế hoạch điều trị</li>
+              <li>✓ Theo dõi định kỳ</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TEAM ================= -->
+
+    <section id="team">
+
+      <div class="container">
+
+        <div class="section-head center">
+          <div class="eyebrow">Đội ngũ</div>
+
+          <h2>Bác sĩ của Quinn</h2>
+
+          <p>
+            Những người đồng hành cùng bạn trên hành trình
+            chăm sóc nụ cười.
+          </p>
+        </div>
+
+
+        <div class="team-grid">
+
+          <article class="doctor">
+            <div class="doctor-avatar">👨‍⚕️</div>
+            <h3>BS. Nguyễn Minh</h3>
+            <p>Nha khoa tổng quát</p>
+          </article>
+
+          <article class="doctor">
+            <div class="doctor-avatar">👩‍⚕️</div>
+            <h3>BS. Linh Anh</h3>
+            <p>Chỉnh nha & thẩm mỹ</p>
+          </article>
+
+          <article class="doctor">
+            <div class="doctor-avatar">👨‍⚕️</div>
+            <h3>BS. Hoàng Nam</h3>
+            <p>Implant & phục hình</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= BOOKING ================= -->
+
+    <section class="booking" id="booking">
+
+      <div class="container booking-grid">
+
+        <div class="booking-text">
+
+          <div class="eyebrow" style="color:#b9f7fb;">
+            Đặt lịch
+          </div>
+
+          <h2 style="font-size:clamp(32px,5vw,50px);line-height:1.1;">
+            Sẵn sàng cho<br>
+            nụ cười mới?
+          </h2>
+
+          <p>
+            Điền thông tin bên cạnh để gửi yêu cầu đặt lịch.
+            Nhân viên phòng khám sẽ liên hệ để xác nhận.
+          </p>
+
+        </div>
+
+
+        <form class="booking-form" id="bookingForm">
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="name">Họ và tên</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Nguyễn Văn A"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="phone">Số điện thoại</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="09xxxxxxxx"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="date">Ngày mong muốn</label>
+              <input
+                id="date"
+                type="date"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="service">Dịch vụ</label>
+
+              <select id="service" required>
+                <option value="">Chọn dịch vụ</option>
+                <option>Nha khoa tổng quát</option>
+                <option>Tẩy trắng răng</option>
+                <option>Niềng răng</option>
+                <option>Implant</option>
+                <option>Răng sứ</option>
+                <option>Nha khoa trẻ em</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Ghi chú</label>
+
+              <textarea
+                id="message"
+                placeholder="Bạn muốn tư vấn vấn đề gì?"
+              ></textarea>
+            </div>
+
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width:100%;">
+            Gửi yêu cầu đặt lịch
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div class="eyebrow">Liên hệ</div>
+          <h2>Quinn luôn sẵn sàng hỗ trợ</h2>
+        </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <h3>📍 Địa chỉ</h3>
+            <p>123 Đường Nụ Cười, Hà Nội</p>
+            <p>Thứ 2 – Chủ nhật</p>
+          </div>
+
+          <div class="contact-card">
+            <h3>📞 Liên hệ</h3>
+            <p>Hotline: 0900 123 456</p>
+            <p>Email: hello@nhakhoaquinn.vn</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="logo" style="color:white;margin-bottom:15px;">
+            <span class="logo-icon">🦷</span>
+            Nha Khoa Quinn
+          </div>
+
+          <p>
+            Chăm sóc nụ cười bằng chuyên môn,
+            công nghệ và sự tận tâm.
+          </p>
+        </div>
+
+
+        <div>
+          <h4>Khám phá</h4>
+
+          <div class="footer-links">
+            <a href="#services">Dịch vụ</a>
+            <a href="#about">Về Quinn</a>
+            <a href="#pricing">Bảng giá</a>
+            <a href="#team">Bác sĩ</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h4>Liên hệ</h4>
+
+          <div class="footer-links">
+            <a href="#booking">Đặt lịch</a>
+            <a href="tel:0900123456">0900 123 456</a>
+            <a href="mailto:hello@nhakhoaquinn.vn">
+              hello@nhakhoaquinn.vn
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Nha Khoa Quinn. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast">
+    Đã gửi yêu cầu đặt lịch 🎉
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+
+    const bookingForm = document.getElementById("bookingForm");
+    const toast = document.getElementById("toast");
+
+    bookingForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      toast.classList.add("show");
+
+      bookingForm.reset();
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+
+    });
+
+
+    const dateInput = document.getElementById("date");
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    dateInput.min = `${year}-${month}-${day}`;
+
+  </script>
+
+</body>
+</html>
+```
